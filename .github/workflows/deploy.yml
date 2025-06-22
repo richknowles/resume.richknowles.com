@@ -48,7 +48,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: rightontron/resume-site:latest
-          platforms: linux/arm64
+          platforms: linux/amd64
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
