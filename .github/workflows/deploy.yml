@@ -72,12 +72,12 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:      ${{ secrets.SSH_KEY }}
           debug:    true
+          port: 22               # or your SSH port
           script: |
             docker pull rightontron/resume-site:latest
             docker rm -f resume-site || true
             docker run -d \
               --name resume-site \
-              --platform linux/amd64 \
               -p 3001:3001 \
               rightontron/resume-site:latest
             sudo nginx -t && sudo systemctl reload nginx
